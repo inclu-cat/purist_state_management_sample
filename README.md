@@ -2,15 +2,7 @@
 
 This is a sample project for the aritcle "Flutter state management for purists"
 
-## Getting Started
+Related article is [here](https://inclucat.wordpress.com/2021/08/27/flutter-state-management-for-purists/)
 
-This project is a starting point for a Flutter application.
+![image](https://user-images.githubusercontent.com/82203087/130767471-7480c802-2721-4b10-a548-87fdbee58c7f.png)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
