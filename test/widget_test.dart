@@ -9,22 +9,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:purist_state_management_sample/main.dart';
+import 'package:purist_state_management_sample/services/sample_service.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+
+    SampleService.mock = _SampleServiceMock();
+
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // tap the "retrieve text data" button.
+    final button = find.text('retrieve text data');
+    await tester.tap(button);
+    await tester.pumpAndSettle();
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that data view shows "mock data".
+    expect(find.text('mock data'), findsOneWidget);
   });
+}
+
+
+class _SampleServiceMock extends SampleService{
+  @override
+  Future<Color> getButtonColor() async {
+    return Colors.amber;
+  }
+
+  @override
+  Future<String> getTextData() async {
+    return 'mock data';
+  }
+
 }
